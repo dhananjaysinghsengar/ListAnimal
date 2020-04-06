@@ -42,10 +42,11 @@ public class ProcessAnimalInformation {
 	public static void displayResult(ArrayList<String> listOfCat, String gender) {
 		String temp = "";
 		String finalList = "";
-		for (String str : listOfCat) {
-			temp = str;
-			finalList = finalList.concat(temp).concat("\n\t\t");
-		}
+		
+		  for (String str : listOfCat) { 
+			  temp = str; finalList =
+			  finalList.concat(temp).concat("\n\t\t"); }
+		 
 		LOGGER.info("\n\t" + gender + "\n\t\t" + finalList);
 	}
 
