@@ -2,18 +2,16 @@ package services;
 
 import java.util.ArrayList;
 import java.util.logging.Logger;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import model.People;
 import model.Pet;
 
 public class ProcessAnimalInformation {
 
 	private final static Logger LOGGER = Logger.getLogger(ProcessAnimalInformation.class.getName());
-	
+
 	public static ArrayList<String> extractCatInformation(String jsonArray, String gender)
 			throws JsonMappingException, JsonProcessingException {
 
@@ -42,11 +40,12 @@ public class ProcessAnimalInformation {
 	public static void displayResult(ArrayList<String> listOfCat, String gender) {
 		String temp = "";
 		String finalList = "";
-		
-		  for (String str : listOfCat) { 
-			  temp = str; finalList =
-			  finalList.concat(temp).concat("\n\t\t"); }
-		 
+
+		for (String str : listOfCat) {
+			temp = str;
+			finalList = finalList.concat(temp).concat("\n\t\t");
+		}
+
 		LOGGER.info("\n\t" + gender + "\n\t\t" + finalList);
 	}
 
