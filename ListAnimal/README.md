@@ -35,7 +35,9 @@ Loggers have been set up to capture web service response and final output. Pleas
 ***********************************************************************************
 Apr 06, 2020 3:47:11 PM services.ProcessAnimalInformation displayResult
 INFO:
+
         Male
+	
                 Garfield
                 Tom
                 Max
@@ -43,8 +45,10 @@ INFO:
 
 Apr 06, 2020 3:47:11 PM services.ProcessAnimalInformation displayResult
 INFO:
-        Female
-                Garfield
+        
+	Female
+               
+	       Garfield
                 Tabby
                 Simba
 **************************************************************************************
