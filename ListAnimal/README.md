@@ -15,7 +15,7 @@ Module is responsible for fetching people data by consuming a web service and ca
 ### Project import
 - If using IDE please import using git url https://github.com/dhananjaysinghsengar/ListAnimal.git
 - If you would like to download the project in your local desktop first then follow below commands - 
-	- git clone https://github.com/dhananjaysinghsengar/Transaction-Analysis.git
+	- git clone https://github.com/dhananjaysinghsengar/ListAnimal.git
 
 
 ### Project execution
