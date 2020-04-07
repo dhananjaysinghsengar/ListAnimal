@@ -1,12 +1,17 @@
 package model;
 
+import java.util.List;
 
+/**
+ * @author Dhananjay Singh Sengar Data model for People
+ *
+ */
 public class People {
 
-	public String name;
-	public String gender;
-	public float age;
-	public Pet pets[];
+	private String name;
+	private String gender;
+	private float age;
+	private List<Pets> pets;
 
 	public String getName() {
 		return name;
@@ -20,8 +25,13 @@ public class People {
 		return age;
 	}
 
-	public Pet[] getPets() {
+	public List<Pets> getPets() {
 		return pets;
 	}
 
+	@Override
+	public String toString() {
+
+		return name + "," + gender + "," + age + "," + pets;
+	}
 }

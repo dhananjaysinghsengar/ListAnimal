@@ -25,7 +25,7 @@ public class ProcessAnimalInformationTest {
 		String jsonArr = ConsumePeopleInformation.getPeopleInformation(targetUrl);
 		ArrayList<String> expectedList = new ArrayList<String>(Arrays.asList("Garfield", "Tom", "Max", "Jim"));
 
-		assertEquals(expectedList, ProcessAnimalInformation.extractCatInformation(jsonArr, "Male"));
+		assertEquals(expectedList, ProcessAnimalInformation.extractCatInformation(jsonArr, "Male", "Cat"));
 
 	}
 
@@ -39,7 +39,7 @@ public class ProcessAnimalInformationTest {
 		String jsonArr = ConsumePeopleInformation.getPeopleInformation(targetUrl);
 		ArrayList<String> expectedList = new ArrayList<String>(Arrays.asList("Garfield", "Tom", "Max", "Jim"));
 
-		assertEquals(expectedList, ProcessAnimalInformation.extractCatInformation(jsonArr, "MaLe"));
+		assertEquals(expectedList, ProcessAnimalInformation.extractCatInformation(jsonArr, "MaLe", "Cat"));
 
 	}
 
@@ -53,7 +53,7 @@ public class ProcessAnimalInformationTest {
 		String jsonArr = ConsumePeopleInformation.getPeopleInformation(targetUrl);
 		ArrayList<String> expectedList = new ArrayList<String>(Arrays.asList("Garfield", "Tom", "Max", "Jim"));
 
-		assertEquals(expectedList, ProcessAnimalInformation.extractCatInformation(jsonArr, "MALE"));
+		assertEquals(expectedList, ProcessAnimalInformation.extractCatInformation(jsonArr, "MALE", "Cat"));
 
 	}
 
@@ -67,7 +67,7 @@ public class ProcessAnimalInformationTest {
 		String jsonArr = ConsumePeopleInformation.getPeopleInformation(targetUrl);
 		ArrayList<String> expectedList = new ArrayList<String>(Arrays.asList("Garfield", "Tom", "Max", "Jim"));
 
-		assertEquals(expectedList, ProcessAnimalInformation.extractCatInformation(jsonArr, "mALE"));
+		assertEquals(expectedList, ProcessAnimalInformation.extractCatInformation(jsonArr, "mALE", "Cat"));
 
 	}
 
@@ -81,7 +81,7 @@ public class ProcessAnimalInformationTest {
 		String jsonArr = ConsumePeopleInformation.getPeopleInformation(targetUrl);
 		ArrayList<String> expectedList = new ArrayList<String>(Arrays.asList("Garfield", "Tabby", "Simba"));
 
-		assertEquals(expectedList, ProcessAnimalInformation.extractCatInformation(jsonArr, "Female"));
+		assertEquals(expectedList, ProcessAnimalInformation.extractCatInformation(jsonArr, "Female", "Cat"));
 
 	}
 
@@ -95,7 +95,7 @@ public class ProcessAnimalInformationTest {
 		String jsonArr = ConsumePeopleInformation.getPeopleInformation(targetUrl);
 		ArrayList<String> expectedList = new ArrayList<String>(Arrays.asList("Garfield", "Tabby", "Simba"));
 
-		assertEquals(expectedList, ProcessAnimalInformation.extractCatInformation(jsonArr, "female"));
+		assertEquals(expectedList, ProcessAnimalInformation.extractCatInformation(jsonArr, "female", "Cat"));
 
 	}
 
@@ -109,7 +109,7 @@ public class ProcessAnimalInformationTest {
 		String jsonArr = ConsumePeopleInformation.getPeopleInformation(targetUrl);
 		ArrayList<String> expectedList = new ArrayList<String>(Arrays.asList("Garfield", "Tabby", "Simba"));
 
-		assertEquals(expectedList, ProcessAnimalInformation.extractCatInformation(jsonArr, "fEMALE"));
+		assertEquals(expectedList, ProcessAnimalInformation.extractCatInformation(jsonArr, "fEMALE", "Cat"));
 
 	}
 
@@ -123,7 +123,7 @@ public class ProcessAnimalInformationTest {
 		String jsonArr = ConsumePeopleInformation.getPeopleInformation(targetUrl);
 		ArrayList<String> expectedList = new ArrayList<String>(Arrays.asList("Garfield", "Tabby", "Simba"));
 
-		assertEquals(expectedList, ProcessAnimalInformation.extractCatInformation(jsonArr, "FEMALE"));
+		assertEquals(expectedList, ProcessAnimalInformation.extractCatInformation(jsonArr, "FEMALE", "Cat"));
 
 	}
 

@@ -7,7 +7,7 @@ Git repository url - git clone https://github.com/dhananjaysinghsengar/ListAnima
 Module is responsible for fetching people data by consuming a web service and categorizing cat information based on owner's gender.
 
 ### prerequisite
-- JDK 5 or higher installed on the platform where application is required to be executed
+- JDK 8 or higher installed on the platform where application is required to be executed
 - Gradle
 
 
