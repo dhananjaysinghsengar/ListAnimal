@@ -33,7 +33,7 @@ RUN /bin/bash -c "source $HOME/.bashrc"
 RUN rm gradle-2.4-bin.zip
 RUN cd ./ListAnimal/ListAnimal
 WORKDIR ./ListAnimal/ListAnimal
-RUN chomd 777 *
+RUN chmod 777 *
 RUN bash ./gradlew build --stacktrace
 RUN bash ./gradlew tasks --stacktrace
 RUN bash ./gradlew run --stacktrace
