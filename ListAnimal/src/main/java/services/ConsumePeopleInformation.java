@@ -43,7 +43,7 @@ public class ConsumePeopleInformation {
 			logger.info("REST API response :" + result);
 			return result;
 		}
-
+		
 		return null;
 	}
 }

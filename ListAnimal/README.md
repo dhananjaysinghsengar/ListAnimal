@@ -22,14 +22,14 @@ Module is responsible for fetching people data by consuming a web service and ca
 - From IDE -
 		- Select the project, Go to Project -> Build Project
 		- select the project and Right click, Run As -> Java Application
-- From Command prompt 
+- From Command prompt -
 		- Open Command prompt
 		- Go to the location where You have saved the project and go to the main folder name (i.e. ListAnimal)
     - gradlew build
     - gradlew tasks
     - gradlew run
     
-- Using Dockerfile
+- Using Dockerfile -
 		- Docker engine installation is a prerequisite in your environment.
 		- download the Dockerfile available with the project.
 		- Create a folder with name AnimalInformation and copy Dockefile in AnimalInformation directory
@@ -43,22 +43,19 @@ Module is responsible for fetching people data by consuming a web service and ca
 ### Output pattern
 Loggers have been set up to capture web service response and final output. Please find below a sample output- 
 ***********************************************************************************
-Apr 06, 2020 3:47:11 PM services.ProcessAnimalInformation displayResult
-INFO:
-
-        Male
-	
-                Garfield
-                Tom
-                Max
-                Jim
-
-Apr 06, 2020 3:47:11 PM services.ProcessAnimalInformation displayResult
-INFO:
-        
-	Female
-               
-	       		Garfield
-                Tabby
-                Simba
+Apr 07, 2020 5:58:29 PM services.ProcessAnimalInformation displayResult
+INFO: 
+	Male -
+		- Garfield
+		- Tom
+		- Max
+		- Jim
+		
+Apr 07, 2020 5:58:29 PM services.ProcessAnimalInformation displayResult
+INFO: 
+	Female -
+		- Garfield
+		- Tabby
+		- Simba
+		
 **************************************************************************************

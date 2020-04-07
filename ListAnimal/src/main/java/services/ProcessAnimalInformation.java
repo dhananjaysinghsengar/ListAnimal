@@ -78,10 +78,10 @@ public class ProcessAnimalInformation {
 
 		for (String str : listOfCat) {
 			temp = str;
-			finalList = finalList.concat(temp).concat("\n\t\t");
+			finalList = finalList.concat("- " + temp).concat("\n\t\t");
 		}
 
-		logger.info("\n\t" + gender + "\n\t\t" + finalList);
+		logger.info("\n\t" + gender + " -\n\t\t" + finalList);
 	}
 
 }
