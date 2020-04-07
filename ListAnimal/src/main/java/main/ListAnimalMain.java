@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 import services.ConsumePeopleInformation;
 import services.ProcessAnimalInformation;
@@ -16,11 +17,13 @@ import utility.LoadProperty;
  */
 public class ListAnimalMain {
 	
-	private final static Logger LOGGER = Logger.getLogger(ListAnimalMain.class.getName());
+	static Logger logger = Logger.getLogger(ListAnimalMain.class.getName());
 	
 	//Main method and entry point for the application
 	public static void main(String[] args) throws ClientProtocolException, IOException {
 
+		//PropertiesConfigurator is used to configure logger from properties file
+        PropertyConfigurator.configure("log4j.properties");
 		// Load properties from config.properties file through LoadProperty class
 		LoadProperty configProperty = new LoadProperty();
 		String targetUrl = configProperty.retrieveProperty("peopleurlpath");
@@ -43,7 +46,8 @@ public class ListAnimalMain {
 
 		}else
 		{
-			LOGGER.info("Error received while reuesting web service :" + res);
+			logger.error("Error received while reuesting web service :" + res);
+			
 		}
 
 	}

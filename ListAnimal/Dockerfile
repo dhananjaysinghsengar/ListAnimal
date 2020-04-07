@@ -1,34 +1,40 @@
-# Dockerfile
+FROM library/ubuntu:latest
 
-FROM  phusion/baseimage:0.9.17
+# Install OpenJDK-8
+RUN apt-get update && \
+    apt-get install -y openjdk-8-jdk && \
+    apt-get install -y ant && \
+    apt-get clean;
 
-MAINTAINER  Dhananjay Singh Sengar <dhananjaysengar@ymail.com>
-
-RUN echo "deb http://archive.ubuntu.com/ubuntu trusty main universe" > /etc/apt/sources.list
-
-RUN apt-get -y update
-
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q python-software-properties software-properties-common
-
-ENV JAVA_VER 8
-ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
-
-RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/apt/sources.list && \
-    echo 'deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/apt/sources.list && \
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C2518248EEA14886 && \
-    apt-get update && \
-    echo oracle-java${JAVA_VER}-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections && \
-    apt-get install -y --force-yes --no-install-recommends oracle-java${JAVA_VER}-installer oracle-java${JAVA_VER}-set-default && \
+# Fix certificate issues
+RUN apt-get update && \
+    apt-get install ca-certificates-java && \
     apt-get clean && \
-    rm -rf /var/cache/oracle-jdk${JAVA_VER}-installer
+    update-ca-certificates -f;
 
-RUN update-java-alternatives -s java-8-oracle
+# Setup JAVA_HOME -- useful for docker commandline
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
+RUN export JAVA_HOME
 
-RUN echo "export JAVA_HOME=/usr/lib/jvm/java-8-oracle" >> ~/.bashrc
+#Install git
+RUN apt-get update && \        
+     apt-get install -y git
+RUN git clone https://github.com/dhananjaysinghsengar/ListAnimal.git
 
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+# Download and install Gradle
+RUN apt-get update
+RUN apt-get install curl --assume-yes
+RUN curl -L https://services.gradle.org/distributions/gradle-2.4-bin.zip -o gradle-2.4-bin.zip
+RUN apt-get install -y unzip
+RUN unzip gradle-2.4-bin.zip
+ENV GRADLE_HOME=/app/gradle-2.4
+ENV PATH=$PATH:$GRADLE_HOME/bin
+RUN /bin/bash -c "source $HOME/.bashrc"
+RUN rm gradle-2.4-bin.zip
+RUN cd ./ListAnimal/ListAnimal
+WORKDIR ./ListAnimal/ListAnimal
+RUN chomd 777 *
+RUN bash ./gradlew build --stacktrace
+RUN bash ./gradlew tasks --stacktrace
+RUN bash ./gradlew run --stacktrace
 
-CMD ["/sbin/my_init"]
-
-
-docker build -t listanimal:latest -f- https://github.com/docker-library/hello-world.git <<EOF

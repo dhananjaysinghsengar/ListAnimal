@@ -26,20 +26,19 @@ dependencies {
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:28.0-jre'
     
-   // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
-compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.12'
+    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+	compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.12'
 
-// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
-compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.10.2'
+	// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.10.2'
 
-// https://mvnrepository.com/artifact/log4j/log4j
-compile group: 'log4j', name: 'log4j', version: '1.2.17'
-// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
-compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.4'
+	// https://mvnrepository.com/artifact/log4j/log4j
+	compile group: 'log4j', name: 'log4j', version: '1.2.17'
+	// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.4'
 
 
-
-// Use JUnit test framework
+	// Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 }
 

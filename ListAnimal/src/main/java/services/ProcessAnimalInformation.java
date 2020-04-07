@@ -17,7 +17,7 @@ import model.Pets;
  */
 public class ProcessAnimalInformation {
 
-	private final static Logger LOGGER = Logger.getLogger(ProcessAnimalInformation.class.getName());
+	static Logger logger = Logger.getLogger(ProcessAnimalInformation.class.getName());
 
 	/*
 	 * Method responsible for extracting cat information based on owner's gender.
@@ -81,7 +81,7 @@ public class ProcessAnimalInformation {
 			finalList = finalList.concat(temp).concat("\n\t\t");
 		}
 
-		LOGGER.info("\n\t" + gender + "\n\t\t" + finalList);
+		logger.info("\n\t" + gender + "\n\t\t" + finalList);
 	}
 
 }

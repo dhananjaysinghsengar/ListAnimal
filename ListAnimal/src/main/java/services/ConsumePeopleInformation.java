@@ -9,6 +9,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
+import org.apache.log4j.Logger;
 
 /**
  * @author Dhananjay Singh Sengar 
@@ -18,8 +19,7 @@ import org.apache.http.util.EntityUtils;
  */
 public class ConsumePeopleInformation {
 
-	// private final static Logger LOGGER =
-	// Logger.getLogger(ConsumePeopleInformation.class.getName());
+	static Logger logger = Logger.getLogger(ConsumePeopleInformation.class.getName());
 
 	/*
 	 * This method takes string parameter as an input which should be a URI supplied
@@ -40,7 +40,7 @@ public class ConsumePeopleInformation {
 
 		} else if (entity != null) {
 			String result = EntityUtils.toString(entity);
-			// LOGGER.info("REST API response :" + result);
+			logger.info("REST API response :" + result);
 			return result;
 		}
 

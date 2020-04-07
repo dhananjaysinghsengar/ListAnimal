@@ -29,7 +29,17 @@ Module is responsible for fetching people data by consuming a web service and ca
     - gradlew tasks
     - gradlew run
     
-    
+- Using Dockerfile
+		- Docker engine installation is a prerequisite in your environment.
+		- download the Dockerfile available with the project.
+		- Create a folder with name AnimalInformation and copy Dockefile in AnimalInformation directory
+		- execute `docker build -t listanimal .` (Build also will run the application and will display result in the end)
+		- Once docker image is build successfully, execute - 
+			`docker run -it listanimal`
+		- You will enter into container inside /ListAnimal/ListAnimal working directory
+		- Execute `./gradlew run`
+		- The result should display as mentioned in the Output pattern section
+		
 ### Output pattern
 Loggers have been set up to capture web service response and final output. Please find below a sample output- 
 ***********************************************************************************
@@ -48,7 +58,7 @@ INFO:
         
 	Female
                
-	       Garfield
+	       		Garfield
                 Tabby
                 Simba
 **************************************************************************************
