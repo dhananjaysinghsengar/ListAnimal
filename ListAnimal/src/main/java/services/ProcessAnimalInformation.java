@@ -1,8 +1,11 @@
 package services;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -75,8 +78,10 @@ public class ProcessAnimalInformation {
 	public static void displayResult(List<String> listOfCat, String gender) {
 		String temp = "";
 		String finalList = "";
+		List<String> result = listOfCat.stream().sorted(
+                Comparator.comparing(n->n.toString())).collect(Collectors.toList());
 
-		for (String str : listOfCat) {
+		for (String str : result) {
 			temp = str;
 			finalList = finalList.concat("- " + temp).concat("\n\t\t");
 		}
